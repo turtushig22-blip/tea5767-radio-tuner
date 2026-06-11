@@ -1,7 +1,7 @@
 # tea5767-radio-tuner
 An Arduino Uno FM radio tuner utilizing the TEA5767 module and a 16x2 LCD. Features POT and PRESET tuning modes. Currently evolving from a breadboard prototype into a custom PCB project.
 
-## Initial Prototype
+### Initial Prototype
 
 The project built an FM radio device using the TEA5767 radio module and the Arduino UNO in January 2026. Phase 2 includes designing a compact, custom-designed PCB board with further improvements while keeping the design simple and reproducible. The steps will be documented in this repository as I work on the PCB design (so, hopefully, I can finish this project).
 
