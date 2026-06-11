@@ -5,7 +5,7 @@ An Arduino Uno FM radio tuner utilizing the TEA5767 module and a 16x2 LCD. Featu
 
 The project built an FM radio device using the TEA5767 radio module and the Arduino UNO in January 2026. Phase 2 includes designing a compact, custom-designed PCB board with further improvements while keeping the design simple and reproducible. The steps will be documented in this repository as I work on the PCB design (so, hopefully, I can finish this project).
 
-Primary functions of the prototype Arduino circuit include manual and preset FM tuning, displaying the current frequency via a 16x2 LCD, and outputting the audio via wired headphones. A photo of the prototype circuit can be seem from Figure 1. 
+Primary functions of the prototype Arduino circuit include manual and preset FM tuning, displaying the current frequency via a 16x2 LCD, and outputting the audio via wired headphones. A photo of the prototype circuit can be seem from Figure 1 and Figure 2. 
 
 <img width="30%" height="1500" alt="IMG_8481" src="https://github.com/user-attachments/assets/38b8ddc1-4d4f-4876-b08e-915077f8c505" /> Figure 1.
 
