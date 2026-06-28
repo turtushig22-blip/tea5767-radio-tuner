@@ -5,4 +5,4 @@ To further improve the project, I decided to let it be my first PCB design while
 
 I started the project continuation by learning to do schematic sketches on KiCad. The schematic can be seen in Figure 3. 
 
-<img width="858" height="595" alt="image" src="https://github.com/user-attachments/assets/fd756efe-5cf4-4807-94da-3f2834833754" /> Figure 3.
+<img width="1033" height="720" alt="image" src="https://github.com/user-attachments/assets/65cad2f4-6875-48c1-94d2-3fd4c67d9e1d" /> Figure 3.
