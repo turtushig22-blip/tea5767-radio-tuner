@@ -11,4 +11,4 @@ Primary functions of the prototype Arduino circuit include manual and preset FM 
 
 <img width="70%" height="427" alt="Screenshot 2026-06-10 at 11 31 26" src="https://github.com/user-attachments/assets/b497ef54-2f2f-4c2c-9588-3f1615963869" /> Figure 2.
 
-If you wish to see a video demonstration of the prototype, please follow https://youtu.be/HQ7OcgIyThs, and for a detailed breakdown of the theory, component selection, and circuit design, you can read [Producing_an_FM_Radio_Tuner.pdf](https://github.com/user-attachments/files/28803972/Producing_an_FM_Radio_Tuner.pdf).
+If you wish to see a video demonstration of the prototype, please follow https://youtu.be/HQ7OcgIyThs, and for a detailed breakdown of the theory, component selection, and circuit design, you can read [Download PDF File](Producing_an_FM_Radio_Tuner.pdf).
