@@ -20,4 +20,9 @@ To further improve the project, I decided to let it be my first PCB design while
 I continued the project by drawing the circuit schematic in KiCad. The schematic can be seen in Figure 3. 
 <img width="90%" height="668" alt="image" src="https://github.com/user-attachments/assets/55278728-316c-4677-8030-318b2a567f4f" /> Figure 3.
 
-As the project required modules whose footprints do not readily exist in KiCad, I used it to learn to create custom footprints as well. The footprints for the ESP32-DevKit-32E, TEA5767, PAM8403, KY-040, and the 0.96 OLED Display are included in the 'Custom_Footprints.pretty' folder. 
+### Footprints.
+As the project required modules whose footprints do not readily exist in KiCad, I used it to learn to create custom footprints as well. The footprints for the ESP32-DevKit-32E, TEA5767, PAM8403, KY-040, and the 0.96 OLED Display are included in the 'Custom_Footprints.pretty' folder. Photos of the custom footprints are attached below. 
+
+<img width="30%" height="707" alt="image" src="https://github.com/user-attachments/assets/14ccbb63-4989-4220-851b-c2662130ea2f" /> <img width="30%" height="542" alt="image" src="https://github.com/user-attachments/assets/b04eda3b-b7d1-4b83-af2e-7bae6d7ef63d" /> ESP32-DevKit-32E Footprint
+
+
