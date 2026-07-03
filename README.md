@@ -7,9 +7,9 @@
 
   Primary functions of the prototype Arduino circuit include manual and preset FM tuning, displaying the current frequency via a 16x2 LCD, and outputting the audio via wired headphones. We could not use speakers to output sound as the TEA5767 module does not have a built-in speaker smplifier, which required us to sodler directly onto the module. A photo of the prototype circuit can be seen from Figure 1 and Figure 2. 
 
-<img width="50%" height="3073" alt="IMG_8481" src="https://github.com/user-attachments/assets/b35eaf25-04c4-40bf-98c2-4cec20e6fc4c" />   Figure 1 [Photo of the prototype that used Arduino UNO].
+<img width="30%" height="3073" alt="IMG_8481" src="https://github.com/user-attachments/assets/b35eaf25-04c4-40bf-98c2-4cec20e6fc4c" />   Figure 1 [Photo of the prototype that used Arduino UNO].
 
-<img width="80%" height="427" alt="Screenshot 2026-06-10 at 11 31 26" src="https://github.com/user-attachments/assets/b497ef54-2f2f-4c2c-9588-3f1615963869" />   Figure 2 [Circuit Diagram of the prototype].
+<img width="70%" height="427" alt="Screenshot 2026-06-10 at 11 31 26" src="https://github.com/user-attachments/assets/b497ef54-2f2f-4c2c-9588-3f1615963869" />   Figure 2 [Circuit Diagram of the prototype].
 
  To see a video demonstration of the prototype, please follow https://youtu.be/HQ7OcgIyThs, and for a detailed breakdown of the theory, component selection, and circuit design, you can read this [PDF File](Producing_an_FM_Radio_Tuner.pdf).
 
@@ -18,7 +18,9 @@
 To further improve the project, I decided to let it be my first PCB design while improving the radio device as well. The improvements that have been made include PAM8403 amplifier that will feed the audio into two 3-Watt, 4-Ohm speakers while working as a volume control, an ESP32 Development Board instead of the Arduino UNO to save space on the PCB, a 0.96 OLED display replacing the 16x2 Liquid Crystal Display for a similar reason, and a KY-040 rotary encoder that will serve as both the manual frequency and preset frequency control. 
 
 I continued the project by drawing the circuit schematic in KiCad. The schematic can be seen in Figure 3. 
-<img width="80%" height="668" alt="image" src="https://github.com/user-attachments/assets/55278728-316c-4677-8030-318b2a567f4f" />   Figure 3 [Schematic of the ESP32-based Circuit]. (To feed the audio signal from the TEA5767 module to the PAM8403 amplifier, I used a 3.5mm jack with a bare wire end, which was then connected to the L, G, and B pins on the amplifier. Note that these connections are not reflected in the schematic of the circuit as KiCad does not allow the schematic symbol of a device to have more pins than the device's footprint, which becomes a bit complicated for the TEA5767 module as it does not have designated pins for the L, G, R. One way to solve this is to draw the 3.5mm jack in the schematic editor; however, as the jack and the connection between the two modules will never actually touch the PCB, I decided to simply leave the pins on the amplifier not connected and draw the TEA5767 with only its physical pins).
+<img width="70%" height="668" alt="image" src="https://github.com/user-attachments/assets/55278728-316c-4677-8030-318b2a567f4f" />   Figure 3 [Schematic of the ESP32-based Circuit]. 
+
+(To feed the audio signal from the TEA5767 module to the PAM8403 amplifier, I used a 3.5mm jack with a bare wire end, which was then connected to the L, G, and B pins on the amplifier. Note that these connections are not reflected in the schematic of the circuit as KiCad does not allow the schematic symbol of a device to have more pins than the device's footprint, which becomes a bit complicated for the TEA5767 module as it does not have designated pins for the L, G, R. One way to solve this is to draw the 3.5mm jack in the schematic editor; however, as the jack and the connection between the two modules will never actually touch the PCB, I decided to simply leave the pins on the amplifier not connected and draw the TEA5767 with only its physical pins).
 
 ### Footprints.
 As the project required modules whose footprints do not readily exist in KiCad, I used it to learn to create custom footprints as well. The footprints for the ESP32-DevKit-32E, TEA5767, PAM8403, KY-040, and the 0.96 OLED Display are included in the 'Custom_Footprints.pretty' folder. Photos of the custom footprints are attached below. 
@@ -35,7 +37,8 @@ As the project required modules whose footprints do not readily exist in KiCad, 
 
 ### PCB Layout
 After creating the custom footprints, I created the PCB design inside KiCad's PCB editor. A picture of the PCB layout from KiCad's PCB editor is shown in Figure 9. 
-<img width="80%" height="796" alt="image" src="https://github.com/user-attachments/assets/853ca83b-9713-4130-ac22-ee88a3b29b99" /> Figure 9 [PCB Layout of the Radio Module]. 
+
+<img width="70%" height="796" alt="image" src="https://github.com/user-attachments/assets/853ca83b-9713-4130-ac22-ee88a3b29b99" /> Figure 9 [PCB Layout of the Radio Module]. 
 
 
 
