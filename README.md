@@ -18,11 +18,25 @@
 To further improve the project, I decided to let it be my first PCB design while improving the radio device as well. The improvements that have been made include PAM8403 amplifier that will feed the audio into two 3-Watt, 4-Ohm speakers while working as a volume control, an ESP32 Development Board instead of the Arduino UNO to save space on the PCB, a 0.96 OLED display replacing the 16x2 Liquid Crystal Display for a similar reason, and a KY-040 rotary encoder that will serve as both the manual frequency and preset frequency control. 
 
 I continued the project by drawing the circuit schematic in KiCad. The schematic can be seen in Figure 3. 
-<img width="80%" height="668" alt="image" src="https://github.com/user-attachments/assets/55278728-316c-4677-8030-318b2a567f4f" />   &nbsp;Figure 3.
+<img width="80%" height="668" alt="image" src="https://github.com/user-attachments/assets/55278728-316c-4677-8030-318b2a567f4f" />   Figure 3.
 
 ### Footprints.
 As the project required modules whose footprints do not readily exist in KiCad, I used it to learn to create custom footprints as well. The footprints for the ESP32-DevKit-32E, TEA5767, PAM8403, KY-040, and the 0.96 OLED Display are included in the 'Custom_Footprints.pretty' folder. Photos of the custom footprints are attached below. 
 
-<img width="30%" height="707" alt="image" src="https://github.com/user-attachments/assets/14ccbb63-4989-4220-851b-c2662130ea2f" /> <img width="30%" height="542" alt="image" src="https://github.com/user-attachments/assets/b04eda3b-b7d1-4b83-af2e-7bae6d7ef63d" />   ESP32-DevKit-32E Footprint
+<img width="30%" height="707" alt="image" src="https://github.com/user-attachments/assets/14ccbb63-4989-4220-851b-c2662130ea2f" /> <img width="30%" height="542" alt="image" src="https://github.com/user-attachments/assets/b04eda3b-b7d1-4b83-af2e-7bae6d7ef63d" />   ESP32-DevKit-32E Footprint. 
+
+<img width="30%" height="253" alt="image" src="https://github.com/user-attachments/assets/a7dc9170-27c6-4f8e-bbdf-2d84467356b1" /> <img width="30%" height="190" alt="image" src="https://github.com/user-attachments/assets/36c975ba-17b6-4889-b303-6f582b961239" />   TEA5767. 
+
+<img width="30%" height="608" alt="image" src="https://github.com/user-attachments/assets/465225b9-9ee4-4e5d-9032-816f5299d809" /> <img width="30%" height="544" alt="image" src="https://github.com/user-attachments/assets/a31eb647-fcd1-42c8-9416-5337d2216461" />   PAM8403. (Note that the PAM8403 used in this project is the "knobby" version of the PAM8403 amplifier board, which allows it to work as the volume control. Furthermore, note that the knobs on the PAM8403 and KY-040 modules are not included in their corresponding footprints for the ease of drawing the footprint and because the boards will not physically touch the PCB).
+
+<img width="30%" height="601" alt="image" src="https://github.com/user-attachments/assets/386cddac-ef01-4aad-add5-2574a7bbf171" /> <img width="30%" height="545" alt="image" src="https://github.com/user-attachments/assets/c96b6515-2261-4d32-993f-d02bc1ebba25" />    KY-040. 
+
+<img width="30%" height="603" alt="image" src="https://github.com/user-attachments/assets/e0f12dd3-e6d5-4338-a470-11bb316b93d5" /> <img width="30%" height="541" alt="image" src="https://github.com/user-attachments/assets/527405b2-6622-4d6a-a290-f59a3dcfd3b5" />    0.96 OLED Display.
+
+
+
+
+
+
 
 
