@@ -7,7 +7,9 @@
 
   Primary functions of the prototype Arduino circuit include manual and preset FM tuning, displaying the current frequency via a 16x2 LCD, and outputting the audio via wired headphones. We could not use speakers to output sound as the TEA5767 module does not have a built-in speaker smplifier, which required us to sodler directly onto the module. A photo of the prototype circuit can be seen from Figure 1 and Figure 2. 
 
-<img width="30%" height="3073" alt="IMG_8481" src="https://github.com/user-attachments/assets/b35eaf25-04c4-40bf-98c2-4cec20e6fc4c" />   Figure 1 [Photo of the prototype that used Arduino UNO].
+<img width="30%" height="3073" alt="IMG_8481" src="https://github.com/user-attachments/assets/b35eaf25-04c4-40bf-98c2-4cec20e6fc4c" />   
+
+<br>Figure 1 [Photo of the prototype that used Arduino UNO].
 
 <img width="70%" height="427" alt="Screenshot 2026-06-10 at 11 31 26" src="https://github.com/user-attachments/assets/b497ef54-2f2f-4c2c-9588-3f1615963869" />   Figure 2 [Circuit Diagram of the prototype].
 
@@ -29,7 +31,9 @@ As the project required modules whose footprints do not readily exist in KiCad, 
 
 <img width="30%" height="253" alt="image" src="https://github.com/user-attachments/assets/a7dc9170-27c6-4f8e-bbdf-2d84467356b1" /> <img width="30%" height="190" alt="image" src="https://github.com/user-attachments/assets/36c975ba-17b6-4889-b303-6f582b961239" />   Figure 5 [TEA5767 footprint]. 
 
-<img width="30%" height="608" alt="image" src="https://github.com/user-attachments/assets/465225b9-9ee4-4e5d-9032-816f5299d809" /> <img width="30%" height="544" alt="image" src="https://github.com/user-attachments/assets/a31eb647-fcd1-42c8-9416-5337d2216461" />   Figure 6 [PAM8403 footprint]. (Note that the PAM8403 used in this project is the "knobby" version of the PAM8403 amplifier board, which allows it to work as the volume control. Furthermore, note that the knobs on the PAM8403 and KY-040 modules are not included in their corresponding footprints for the ease of drawing the footprint and because the boards will not physically touch the PCB).
+<img width="30%" height="608" alt="image" src="https://github.com/user-attachments/assets/465225b9-9ee4-4e5d-9032-816f5299d809" /> <img width="30%" height="544" alt="image" src="https://github.com/user-attachments/assets/a31eb647-fcd1-42c8-9416-5337d2216461" />   Figure 6 [PAM8403 footprint]. 
+
+(Note that the PAM8403 used in this project is the "knobby" version of the PAM8403 amplifier board, which allows it to work as the volume control. Furthermore, note that the knobs on the PAM8403 and KY-040 modules are not included in their corresponding footprints for the ease of drawing the footprint and because the boards will not physically touch the PCB).
 
 <img width="30%" height="601" alt="image" src="https://github.com/user-attachments/assets/386cddac-ef01-4aad-add5-2574a7bbf171" /> <img width="30%" height="545" alt="image" src="https://github.com/user-attachments/assets/c96b6515-2261-4d32-993f-d02bc1ebba25" />    Figure 7 [KY-040 footprint]. 
 
