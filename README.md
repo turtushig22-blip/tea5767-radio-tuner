@@ -66,3 +66,6 @@ Figure 9 [PCB Layout of the Radio Module].
 
 For this PCB project, I chose JLC PCB as the manufacturer. When making PCB orders, being aware of the manufacturer's capabilities is just as important as not shorting your circuit. Therefore, I paid close attention to whether the settings when generating the gerber files matched JLC's requirements, which can be seen from https://jlcpcb.com/capabilities/pcb-capabilities. 
 
+### Making the housing
+
+As a person with little experience in housing design and without a 3D printer, I have decided to prototype the housing for my PCB using vinyl downspout pipes, given their availability, rectangular geometry, and thin walls. (If you can find PVC pipes with thin walls, perhaps that's a better option, as they don't have the ribbed, wavy profile to their surface as the downspout pipes do, although you may also need to purchase a heat gun to make the PVC pipe lay flat). A diagram for the dimensions and the cutout template for the project can be seen in Figure 10. 
