@@ -33,7 +33,7 @@ Figure 3 [Schematic of the ESP32-based Circuit].
 (To feed the audio signal from the TEA5767 module to the PAM8403 amplifier, I used a 3.5mm jack with a bare wire end, which was then connected to the L, G, and B pins on the amplifier. Note that these connections are not reflected in the schematic of the circuit as KiCad does not allow the schematic symbol of a device to have more pins than the device's footprint, which becomes a bit complicated for the TEA5767 module as it does not have designated pins for the L, G, R. One way to solve this is to draw the 3.5mm jack in the schematic editor; however, as the jack and the connection between the two modules will never actually touch the PCB, I decided to simply leave the pins on the amplifier not connected and draw the TEA5767 with only its physical pins).
 
 ### Footprints.
-As the project required modules whose footprints do not readily exist in KiCad, I used it to learn to create custom footprints as well. The footprints for the ESP32-DevKit-32E, TEA5767, PAM8403, KY-040, and the 0.96 OLED Display are included in the 'Custom_Footprints.pretty' folder. Photos of the custom footprints are attached below. 
+As the project required modules whose footprints do not readily exist in KiCad, I used it to learn to create custom footprints as well. The footprints for the ESP32-DevKit-32E, TEA5767, PAM8403, KY-040, and the 0.96 OLED Display are included in the `Custom_Footprints.pretty` folder. Photos of the custom footprints are attached below. 
 
 <img width="30%" height="707" alt="image" src="https://github.com/user-attachments/assets/14ccbb63-4989-4220-851b-c2662130ea2f" /> <img width="30%" height="542" alt="image" src="https://github.com/user-attachments/assets/b04eda3b-b7d1-4b83-af2e-7bae6d7ef63d" />   
 
@@ -60,12 +60,11 @@ Figure 8 [0.96 OLED Display footprint].
 ### PCB Layout
 After creating the custom footprints, I created the PCB design inside KiCad's PCB editor. A picture of the PCB layout from KiCad's PCB editor is shown in Figure 9. 
 
-<img width="70%" height="796" alt="image" src="https://github.com/user-attachments/assets/853ca83b-9713-4130-ac22-ee88a3b29b99" /> 
+<img width="852" height="599" alt="image" src="https://github.com/user-attachments/assets/8a332180-8afd-48b6-9e1b-92a92ea5aa36" />
 
 Figure 9 [PCB Layout of the Radio Module]. 
 
 For this PCB project, I chose JLC PCB as the manufacturer. When making PCB orders, being aware of the manufacturer's capabilities is just as important as not shorting your circuit. Therefore, I paid close attention to whether the settings when generating the gerber files matched JLC's requirements, which can be seen from https://jlcpcb.com/capabilities/pcb-capabilities. 
 
-### Making the housing
+The final Gerber files sent to the manufacturer can be found in the `gerbers` folder. Note that the silkscreen text reading *“The first of many. Grateful for everyone who supported me.”* has been removed from the manufacturing files, as it is personal and unnecessary for reproducing the board.
 
-As a person with little experience in housing design and without a 3D printer, I have decided to prototype the housing for my PCB using vinyl downspout pipes, given their availability, rectangular geometry, and thin walls. (If you can find PVC pipes with thin walls, perhaps that's a better option, as they don't have the ribbed, wavy profile to their surface as the downspout pipes do, although you may also need to purchase a heat gun to make the PVC pipe lay flat). A diagram for the dimensions and the cutout template for the project can be seen in Figure 10. 
