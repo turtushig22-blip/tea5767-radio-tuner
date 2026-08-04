@@ -70,7 +70,9 @@ Figure 11 [The Backside of the PCB]. <br>
 
 The image of the device itself can be seen in Figure 12. 
 <img width="70%" height="3024" alt="IMG_9308" src="https://github.com/user-attachments/assets/2c92da76-2c40-45d3-a1a1-45b82b9fe978" /> <br>
-Figure 12 [An image of the ESP32-based Radio Module using TEA5767].
+Figure 12 [An image of the ESP32-based Radio Module using TEA5767].<br>
+<br>
+To see a video demonstration of the PCB and the radio device, please follow https://www.youtube.com/watch?v=WM1Qq82G7yY.
 
 Lastly, designing my first PCB has been a valuable learning experience and has strengthened my interest in electronics and hardware design. I hope this repository is useful to anyone building a similar project or beginning their own PCB design journey. I would like to thank the HTM Workshop team for their informative YouTube tutorial series, as well as my family and my girlfriend, Amy, for their encouragement and support throughout this project. <br>
 
