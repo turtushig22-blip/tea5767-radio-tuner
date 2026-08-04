@@ -8,14 +8,14 @@ The project built an FM radio device using the TEA5767 radio module and the Ardu
 The primary functions of the prototype Arduino circuit include manual and preset FM tuning, displaying the current frequency on a 16x2 LCD, and outputting audio via wired headphones. We could not use speakers to output sound as the TEA5767 module does not have a built-in speaker amplifier, which required us to solder directly onto the module. Photos of the prototype circuit and the circuit diagrams are shown in Figures 1 and 2. 
 
 <img width="30%" height="3073" alt="IMG_8481" src="https://github.com/user-attachments/assets/b35eaf25-04c4-40bf-98c2-4cec20e6fc4c" />   
-
-Figure 1 [Photo of the prototype that used Arduino UNO].
+<br>
+Figure 1 [Photo of the prototype that used Arduino UNO].<br>
 
 <img width="70%" height="427" alt="Screenshot 2026-06-10 at 11 31 26" src="https://github.com/user-attachments/assets/b497ef54-2f2f-4c2c-9588-3f1615963869" />   
-
-Figure 2 [Circuit Diagram of the prototype].
-
-To see a video demonstration of the prototype, please follow https://youtu.be/HQ7OcgIyThs, and for a detailed breakdown of the theory, component selection, and circuit design, you can read this [PDF File](Producing_an_FM_Radio_Tuner.pdf).
+<br>
+Figure 2 [Circuit Diagram of the prototype].<br>
+<br>
+To see a video demonstration of the prototype, please follow https://youtu.be/HQ7OcgIyThs, and for a detailed breakdown of the theory, component selection, and circuit design, you can read this [PDF File](Producing_an_FM_Radio_Tuner.pdf).<br>
 
 ## PCB Design
 ### Schematic 
@@ -26,45 +26,58 @@ Before diving into the PCB design, I took my time to make sure that the circuit 
 Furthermore, what has caught attention includes how the PAM8403 needs to be powered by a source other than the microcontroller. The speakers I used are 3-Watt speakers (6-Watts in total since I have two speakers), so assuming that we power the amplifier with 5V, the amount of current we get is I = P / V = 6W / 5V = 1.2A. This amount of current through the microcontroller pins exceeds the manufacturer's specified limit (absolute MAX per pin: 40mA) by a huge amount. Therefore, the amplifier and the microcontroller are wired in parallel to a single transformer of 5V 1.5A capacity. As the amplifier required large current to operate and even larger current to blast music, it is recommended to use adapters that can supply more than 1A to avoid brownouts in other regions of the circuit when the volume is turned up.
 
 Having that in mind, I started drawing the circuit diagram in KiCad's schematic editor. The schematic can be seen in Figure 3. 
-<img width="70%" height="668" alt="image" src="https://github.com/user-attachments/assets/55278728-316c-4677-8030-318b2a567f4f" />   
-
+<img width="70%" height="668" alt="image" src="https://github.com/user-attachments/assets/55278728-316c-4677-8030-318b2a567f4f" /> 
+<br>
 Figure 3 [Schematic of the ESP32-based Circuit]. 
+<br>
 
 (To feed the audio signal from the TEA5767 module to the PAM8403 amplifier, I used a 3.5mm jack with a bare wire end, which was then connected to the L, G, and B pins on the amplifier. Note that these connections are not reflected in the schematic of the circuit as KiCad does not allow the schematic symbol of a device to have more pins than the device's footprint, which becomes a bit complicated for the TEA5767 module as it does not have designated pins for the L, G, R. One way to solve this is to draw the 3.5mm jack in the schematic editor; however, as the jack and the connection between the two modules will never actually touch the PCB, I decided to simply leave the pins on the amplifier not connected and draw the TEA5767 with only its physical pins).
 
 ### Footprints.
 As the project required modules whose footprints do not readily exist in KiCad, I used it to learn to create custom footprints as well. The footprints for the ESP32-DevKit-32E, TEA5767, PAM8403, KY-040, and the 0.96 OLED Display are included in the `Custom_Footprints.pretty` folder. Photos of the custom footprints are attached below. 
 
-<img width="30%" height="707" alt="image" src="https://github.com/user-attachments/assets/14ccbb63-4989-4220-851b-c2662130ea2f" /> <img width="30%" height="542" alt="image" src="https://github.com/user-attachments/assets/b04eda3b-b7d1-4b83-af2e-7bae6d7ef63d" />   
+<img width="30%" height="707" alt="image" src="https://github.com/user-attachments/assets/14ccbb63-4989-4220-851b-c2662130ea2f" /> <img width="30%" height="542" alt="image" src="https://github.com/user-attachments/assets/b04eda3b-b7d1-4b83-af2e-7bae6d7ef63d" />   Figure 4 [ESP32-DevKit-32E Footprint].
 
-Figure 4 [ESP32-DevKit-32E Footprint]. 
+<img width="30%" height="253" alt="image" src="https://github.com/user-attachments/assets/a7dc9170-27c6-4f8e-bbdf-2d84467356b1" /> <img width="30%" height="190" alt="image" src="https://github.com/user-attachments/assets/36c975ba-17b6-4889-b303-6f582b961239" />   Figure 5 [TEA5767 footprint].
 
-<img width="30%" height="253" alt="image" src="https://github.com/user-attachments/assets/a7dc9170-27c6-4f8e-bbdf-2d84467356b1" /> <img width="30%" height="190" alt="image" src="https://github.com/user-attachments/assets/36c975ba-17b6-4889-b303-6f582b961239" />   
-
-Figure 5 [TEA5767 footprint]. 
-
-<img width="30%" height="608" alt="image" src="https://github.com/user-attachments/assets/465225b9-9ee4-4e5d-9032-816f5299d809" /> <img width="30%" height="544" alt="image" src="https://github.com/user-attachments/assets/a31eb647-fcd1-42c8-9416-5337d2216461" />   
-
-Figure 6 [PAM8403 footprint]. 
-
+<img width="30%" height="608" alt="image" src="https://github.com/user-attachments/assets/465225b9-9ee4-4e5d-9032-816f5299d809" /> <img width="30%" height="544" alt="image" src="https://github.com/user-attachments/assets/a31eb647-fcd1-42c8-9416-5337d2216461" />   Figure 6 [PAM8403 footprint].
+<br>
 (Note that the PAM8403 used in this project is the "knobby" version of the PAM8403 amplifier board, which allows it to work as the volume control. Furthermore, note that the knobs on the PAM8403 and KY-040 modules are not included in their corresponding footprints for the ease of drawing the footprint and because the boards will not physically touch the PCB).
 
-<img width="30%" height="601" alt="image" src="https://github.com/user-attachments/assets/386cddac-ef01-4aad-add5-2574a7bbf171" /> <img width="30%" height="545" alt="image" src="https://github.com/user-attachments/assets/c96b6515-2261-4d32-993f-d02bc1ebba25" />    
+<img width="30%" height="601" alt="image" src="https://github.com/user-attachments/assets/386cddac-ef01-4aad-add5-2574a7bbf171" /> <img width="30%" height="545" alt="image" src="https://github.com/user-attachments/assets/c96b6515-2261-4d32-993f-d02bc1ebba25" />    Figure 7 [KY-040 footprint].
 
-Figure 7 [KY-040 footprint]. 
-
-<img width="30%" height="603" alt="image" src="https://github.com/user-attachments/assets/e0f12dd3-e6d5-4338-a470-11bb316b93d5" /> <img width="30%" height="541" alt="image" src="https://github.com/user-attachments/assets/527405b2-6622-4d6a-a290-f59a3dcfd3b5" />   
-
-Figure 8 [0.96 OLED Display footprint].
+<img width="30%" height="603" alt="image" src="https://github.com/user-attachments/assets/e0f12dd3-e6d5-4338-a470-11bb316b93d5" /> <img width="30%" height="541" alt="image" src="https://github.com/user-attachments/assets/527405b2-6622-4d6a-a290-f59a3dcfd3b5" />   Figure 8 [0.96 OLED Display footprint].
 
 ### PCB Layout
 After creating the custom footprints, I created the PCB design inside KiCad's PCB editor. A picture of the PCB layout from KiCad's PCB editor is shown in Figure 9. 
 
-<img width="852" height="599" alt="image" src="https://github.com/user-attachments/assets/8a332180-8afd-48b6-9e1b-92a92ea5aa36" />
-
-Figure 9 [PCB Layout of the Radio Module]. 
-
+<img width="70%" height="599" alt="image" src="https://github.com/user-attachments/assets/8a332180-8afd-48b6-9e1b-92a92ea5aa36" />
+<br>
+Figure 9 [PCB Layout of the Radio Module]. <br>
+<br>
 For this PCB project, I chose JLC PCB as the manufacturer. When making PCB orders, being aware of the manufacturer's capabilities is just as important as not shorting your circuit. Therefore, I paid close attention to whether the settings when generating the gerber files matched JLC's requirements, which can be seen from https://jlcpcb.com/capabilities/pcb-capabilities. 
 
 The final Gerber files sent to the manufacturer can be found in the `gerbers` folder. Note that the silkscreen text reading *“The first of many. Grateful for everyone who supported me.”* has been removed from the manufacturing files, as it is personal and unnecessary for reproducing the board.
+
+To see the code I used for this project, see the folder named `code`.
+
+The image of the PCB can be seen in Figures 10 and 11. 
+<img width="70%" height="1850" alt="IMG_9306" src="https://github.com/user-attachments/assets/cc937b33-d499-4e98-8e87-12da6749adda" /> <br>
+Figure 10 [The Front face of the PCB]. <br>
+
+<img width="70%" height="1996" alt="IMG_9307" src="https://github.com/user-attachments/assets/b3fb024a-1dfe-41f8-beee-422fb7e7a24c" /> <br>
+Figure 11 [The Backside of the PCB]. <br>
+
+The image of the device itself can be seen in Figure 12. 
+<img width="70%" height="3024" alt="IMG_9308" src="https://github.com/user-attachments/assets/2c92da76-2c40-45d3-a1a1-45b82b9fe978" /> <br>
+Figure 12 [An image of the ESP32-based Radio Module using TEA5767].
+
+Lastly, designing my first PCB has been a valuable learning experience and has strengthened my interest in electronics and hardware design. I hope this repository is useful to anyone building a similar project or beginning their own PCB design journey. I would like to thank the HTM Workshop team for their informative YouTube tutorial series, as well as my family and my girlfriend, Amy, for their encouragement and support throughout this project. <br>
+
+This is only the first of many.
+
+
+
+
+
 
