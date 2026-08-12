@@ -76,8 +76,6 @@ To see a video demonstration of the PCB and the radio device, please follow http
 
 Lastly, designing my first PCB has been a valuable learning experience and has strengthened my interest in electronics and hardware design. I hope this repository is useful to anyone building a similar project or beginning their own PCB design journey. I would like to thank the HTM Workshop team for their informative YouTube tutorial series, as well as my family and my girlfriend, Amy, for their encouragement and support throughout this project. <br>
 
-This is only the first of many.
-
 
 
 
