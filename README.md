@@ -59,7 +59,7 @@ For this PCB project, I chose JLC PCB as the manufacturer. When making PCB order
 
 The final Gerber files sent to the manufacturer can be found in the `gerbers` folder. Note that the silkscreen text reading *“The first of many. Grateful for everyone who supported me.”* has been removed from the manufacturing files, as it is personal and unnecessary for reproducing the board.
 
-To see the code I used for this project, see the folder named `code`.
+To see the code I used for this project, see the file named `code`.
 
 The image of the PCB can be seen in Figures 10 and 11. 
 <img width="70%" height="1850" alt="IMG_9306" src="https://github.com/user-attachments/assets/cc937b33-d499-4e98-8e87-12da6749adda" /> <br>
