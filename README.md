@@ -1,7 +1,7 @@
 # TEA5767-based Radio Tuner
-  An Arduino Uno FM radio tuner utilizing the TEA5767 module and a 16x2 LCD. Features POT and PRESET tuning modes. Evolving from a breadboard prototype into a custom PCB project.
+ESP32-based FM radio with TEA5767 tuner, KY-040 rotary encoder, PAM8403 amplifier, and 0.96" OLED display. Custom PCB design.
 
-### Initial Prototype
+### Project History
 
 The project built an FM radio device using the TEA5767 radio module and the Arduino UNO in January 2026. Phase 2 includes designing a compact, custom-designed PCB board with further improvements while keeping the design simple and reproducible. The steps will be documented in this repository as I work on the PCB design (so, hopefully, I can finish this project).
 
@@ -17,7 +17,7 @@ Figure 2 [Circuit Diagram of the prototype].<br>
 <br>
 To see a video demonstration of the prototype, please follow https://youtu.be/HQ7OcgIyThs, and for a detailed breakdown of the theory, component selection, and circuit design, you can read this [PDF File](Producing_an_FM_Radio_Tuner.pdf).<br>
 
-## PCB Design
+## Evolving into a PCB design project
 ### Schematic 
 To further improve the project, I decided to let it be my first PCB design while improving the radio device as well. The improvements that have been made include PAM8403 amplifier that will feed the audio into two 3-Watt, 4-Ohm speakers while working as a volume control, an ESP32 Development Board instead of the Arduino UNO to save space on the PCB, a 0.96 OLED display replacing the 16x2 Liquid Crystal Display for a similar reason, and a KY-040 rotary encoder that will serve as both the manual frequency and preset frequency control. 
 
