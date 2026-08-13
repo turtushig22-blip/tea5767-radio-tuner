@@ -1,1 +1,146 @@
+#include <Wire.h>
+#include <TEA5767.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+#define ENC_CLK 32 //the following are the pins used for the KY-040 encoder
+#define ENC_DT 33
+#define ENC_SW 25
+
+TEA5767 radio;
+struct Station {
+  float freq;
+  const char *name;
+};
+
+Station presets[] = { //these are just the channels I selected, you can adjust them depending on your location
+                      {88.1,  "Classical"},
+                      {90.1,  "Christian Contemporary"},
+                      {92.5,  "Big Country"},
+                      {94.5,  "KGWD"},
+                      {96.5,  "Life 96.5"},
+                      {99.1,  "Kickin' Country"},
+                      {102.3, "ESPN Sioux Falls"},
+                      {107.5, "Faith Radio"}
+};
+
+const int NUM_PRESETS = sizeof(presets)/sizeof(presets[0]); //calculate total preset count
+bool presetMode=false; //manual mode
+int presetIndex=0; //track active preset station
+float freq=96.5; //track frequency and start at 96.5
+
+int lastCLK;
+bool lastButton=HIGH;
+unsigned long lastDebounce=0;
+
+tea5767_info_t info;
+void tune(float f){ //the range of frequencies is 87.5 -- 108.0
+  if(f<87.5) f=87.5;
+  if(f>108.0) f=108.0;
+  freq=f; //update freq variable
+  radio.setFrequency(freq); //command TEA5767
+  delay(50);
+  radio.getInfo(&info); //wait for a bit and update info
+}
+
+void drawUI(){
+  display.clearDisplay();
+  display.setTextColor(SSD1306_WHITE); 
+
+  display.setTextSize(2);
+  display.setCursor(0,0);
+  display.print(presetMode ? "PRESET ON" : "MANUAL ON"); // display what mode the user is on
+
+  display.setTextSize(2);
+  display.setCursor(0,24);
+  display.print(freq,1);  //display the frequency
+  display.print(" MHz");
+
+  display.setTextSize(1);
+  display.setCursor(0,54);
+
+  if(presetMode)
+    display.print(presets[presetIndex].name); // display what channel the user is on if they are using PRESET mode
+
+  display.display();
+}
+
+void setup() {
+  Serial.begin(115200);
+  Wire.begin(21,22); // SDA and SCL pins
+  pinMode(ENC_CLK,INPUT_PULLUP); //turn on the internal PULLUPS to avoid floating pins
+  pinMode(ENC_DT,INPUT_PULLUP);
+  pinMode(ENC_SW,INPUT_PULLUP);
+  lastCLK=digitalRead(ENC_CLK);
+
+  display.begin(SSD1306_SWITCHCAPVCC,0x3C); //turn on OLED
+  display.clearDisplay();
+  display.display();
+
+  radio.awake(); // you have to turn off the STANDBY mode of the TEA5767
+  delay(100);
+  tune(freq);
+  drawUI();
+}
+
+void loop() { //KY-040 logic
+  int clk = digitalRead(ENC_CLK);
+  if (clk != lastCLK && clk == LOW) {
+    if (digitalRead(ENC_DT) != clk) {
+      if (presetMode) {
+        presetIndex = (presetIndex + 1) % NUM_PRESETS;
+        tune(presets[presetIndex].freq);
+      } else {
+        tune(freq + 0.1); //if moving clockwise
+      }
+    } else {
+      if (presetMode) {
+        presetIndex--;
+        if (presetIndex < 0) presetIndex = NUM_PRESETS - 1;
+        tune(presets[presetIndex].freq);
+      } else {
+        tune(freq - 0.1); //if moving counterclockwise
+      }
+    }
+    drawUI(); //refresh display
+  }
+  lastCLK = clk;
+  bool reading = digitalRead(ENC_SW);
+
+  if (reading != lastButton) {  // if the switch changed due to noise or pressing, reset timer
+    lastDebounce = millis();
+  }
+
+  if ((millis() - lastDebounce) > 40) {  // Once state has been stable for > 40ms, process the state change
+    static bool buttonState = HIGH;
+    if (reading != buttonState) {
+      buttonState = reading;
+      if (buttonState == LOW) { // trigger when transition goes from HIGH to LOW (User pressed it)
+        Serial.println("BUTTON PRESSED!");
+        presetMode = !presetMode;
+        Serial.print("Preset mode = ");
+        Serial.println(presetMode ? "PRESET" : "MANUAL");
+
+        if (presetMode) { // go to closest preset channel
+          float best = 1000.0; 
+          for (int i = 0; i < NUM_PRESETS; i++) {
+            float d = fabs(freq - presets[i].freq);
+            if (d < best) {
+              best = d;
+              presetIndex = i;
+            }
+          }
+          tune(presets[presetIndex].freq);
+        }
+        drawUI();
+      }
+    }
+  }
+  lastButton = reading;
+}
+
+
 
