@@ -1,3 +1,4 @@
+![Static Badge](https://shields.io)
 # TEA5767-based Radio Tuner
 ESP32-based FM radio with TEA5767 tuner, KY-040 rotary encoder, PAM8403 amplifier, and 0.96" OLED display. Custom PCB design.
 
