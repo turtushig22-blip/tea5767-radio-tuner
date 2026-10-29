@@ -78,6 +78,11 @@ The image of the device itself can be seen in Figure 12.
 Figure 12 [An image of the ESP32-based Radio Module using TEA5767].<br>
 <br>
 To see a video demonstration of the PCB and the radio device, please follow https://www.youtube.com/watch?v=WM1Qq82G7yY.
+(A 3D printed enclosure was created after the completion of the project. The 3D enclosure design was made on onshape.com and if you wish, the onshape feature script file is included in the root directory of the repository.The enclosure is composed to two main pieces: the top cap and the bottom base. See Figure 13 for a snapshot of the design.)
+
+<img width="60%" height="502" alt="image" src="https://github.com/user-attachments/assets/ea5200e5-48fd-4615-8b99-e0b0a0aebb2c" /> <br>
+Figure 13 [Snapshot of the 3D Enclosure Design]. <br>
+
 
 Lastly, designing my first PCB has been a valuable learning experience and has strengthened my interest in electronics and hardware design. I hope this repository is useful to anyone building a similar project or beginning their own PCB design journey. I would like to thank the HTM Workshop team for their informative YouTube tutorial series, as well as my family and my girlfriend, Amy, for their encouragement and support throughout this project. <br>
 
