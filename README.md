@@ -3,6 +3,9 @@
 # TEA5767-based Radio Tuner
 ESP32-based FM radio with TEA5767 tuner, KY-040 rotary encoder, PAM8403 amplifier, and 0.96" OLED display. Custom PCB design.
 
+<img width="50%" height="587" alt="image" src="https://github.com/user-attachments/assets/5042e063-5864-4de4-a842-efb8b46c0c9b" />
+
+
 ### Project History
 
 The project built an FM radio device using the TEA5767 radio module and the Arduino UNO in January 2026. Phase 2 includes designing a compact, custom-designed PCB board with further improvements while keeping the design simple and reproducible. The steps will be documented in this repository as I work on the PCB design (so, hopefully, I can finish this project).
